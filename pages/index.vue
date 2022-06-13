@@ -8,7 +8,7 @@
             <h1 class="text-6xl mb-10">Hello There!</h1>
             <p class="text-xl">Welcome to the Warehouse Application</p>
             <p class="text-xl mb-6">Please, login to continue</p>
-            <button class="bg-green-400 rounded-2xl text-2xl text-white py-2 px-6">Login</button>
+            <button class="bg-green-400 rounded-2xl text-2xl text-white py-2 px-6" @click="loginPage()">Login</button>
           </div>
           <div id="welcome-second" class="grid grid-cols-3 text-center align-middle items-center justify-center text-4xl bg-green-400 rounded m-4">
             <div>
@@ -34,6 +34,11 @@
 <script>
 export default {
   name: 'IndexPage',
+  methods:{
+    loginPage(){
+      this.$router.push('/login');
+    }
+  }
 }
 </script>
 
