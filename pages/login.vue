@@ -8,14 +8,14 @@
                   <div class="p-8 m-12">
                   <form action="" method="post" class="flex flex-col">
                       <label class="block">
-                          <span class="text-2xl"><i class="bx bx-user"></i> Username</span>
-                          <input type="text" class="bg-gray-200 rounded-md w-48 p-2 ml-6">
+                          <span class="text-2xl inline-flex items-center"><i class="bx bx-user mr-2"></i> Username</span>
+                          <input type="text" class="bg-gray-200 rounded-md w-48 p-2 ml-6 focus:ring focus:border-green-400 focus:ring-green-400">
                       </label>
                       <label class="block mt-8">
-                          <span class="text-2xl"><i class="bx bx-key mx-auto"></i> Password</span>
-                          <input type="text" class="bg-gray-200 rounded-md w-48 p-2 ml-6">
+                          <span class="text-2xl inline-flex items-center"><i class="bx bx-key mr-2"></i> Password</span>
+                          <input type="text" class="bg-gray-200 rounded-md w-48 p-2 ml-6 focus:ring focus:border-green-400 focus:ring-green-400">
                       </label>
-                      <button type="button" class="rounded bg-green-400 text-white text-center text-2xl py-4 px-10 my-8 mx-auto w-auto">Login</button>
+                      <button type="button" class="rounded bg-green-400 text-white text-center text-2xl py-4 px-10 my-8 mx-auto w-auto" @click="loginUser()">Login</button>
                   </form>
                   </div>
               </div>
@@ -27,7 +27,29 @@
 
 <script>
 export default {
-    name: "LoginPage"
+    name: "LoginPage",
+    data: () => {
+        return{
+            username: '',
+            password: ''
+        }
+    },
+    methods:{
+        loginUser(){
+            const user = {
+                username: this.username,
+                password: this.password
+            }
+            console.log(user);
+            this.$router.push('/dashboard')
+            this.$toast.show('Login succesfull',{
+                type: 'success',
+                icon: 'check',
+                duration: 3000
+            })
+            
+        }
+    }
 }
 </script>
 
@@ -37,4 +59,8 @@ export default {
   background-size: cover;
   height: 80vh;
 }
+
+input:focus{
+        outline: none !important;
+    }
 </style>

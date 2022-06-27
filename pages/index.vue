@@ -48,4 +48,7 @@ export default {
   background-size: cover;
   height: 80vh;
 }
+input:focus{
+        outline: none !important;
+    }
 </style>

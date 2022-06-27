@@ -37,6 +37,8 @@ export default {
     modules: [
         // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
+        '@nuxtjs/toast',
+        'nuxt-material-design-icons'
     ],
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
